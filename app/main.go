@@ -136,7 +136,7 @@ func main() {
 			case EQUAL:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("EQUAL_EQUAL == null")
-					indx =+ 2
+					indx += 2
 				} else{
 					fmt.Println("EQUAL = null")
 					indx++
@@ -145,7 +145,7 @@ func main() {
 			case BANG:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("BANG_EQUAL != null")
-					indx =+ 2
+					indx += 2
 				} else{
 					fmt.Println("BANG ! null")
 					indx++
@@ -154,7 +154,7 @@ func main() {
 			case LESS:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("LESS_EQUAL <= null")
-					indx =+ 2
+					indx += 2
 				} else{
 					fmt.Println("LESS < null")
 					indx++
@@ -163,7 +163,7 @@ func main() {
 			case GREATER:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("GREATER_EQUAL >= null")
-					indx =+ 2
+					indx += 2
 				} else{
 					fmt.Println("GREATER > null")
 					indx++
@@ -171,7 +171,7 @@ func main() {
 				
 			case SLASH:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '/'){
-					indx =+ 2
+					indx += 2
 					for indx + 1 < len(fileContents) && fileContents[indx+1] != '\n'{
 						indx++
 					}
