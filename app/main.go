@@ -96,6 +96,7 @@ func main() {
 					indx++
 				} else{
 					fmt.Println("EQUAL = null")
+					indx++
 				}
 				
 
