@@ -26,6 +26,7 @@ func main() {
 		DOLLAR rune = '$'
 		ATSIGN rune = '@'
 		CARET rune = '^'
+		PERCENT rune = '%'
 	)
 
 
@@ -88,7 +89,7 @@ func main() {
 			case STAR:
 				fmt.Println("STAR * null")
 
-			case NUMBER, DOLLAR, ATSIGN, CARET:
+			case NUMBER, DOLLAR, ATSIGN, CARET, PERCENT:
 				
 				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c\n", ch)
 				has_error = true
