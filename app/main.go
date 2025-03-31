@@ -91,9 +91,9 @@ func main() {
 				fmt.Println("STAR * null")
 			
 			case EQUAL:
-				if (i + 1 < len(fileContents) && fileContents[i+1] == '='){
+				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("EQUAL_EQUAL == null")
-					i++
+					indx++
 				} else{
 					fmt.Println("EQUAL == null")
 				}
