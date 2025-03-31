@@ -40,7 +40,7 @@ func main() {
 		panic("Scanner not implemented")
 	} else {
 		for indx, ch := range fileContents{
-			switch ch {
+			switch rune(ch) {
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ( null")
 
