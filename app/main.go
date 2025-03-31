@@ -213,7 +213,7 @@ func main() {
 							fmt.Printf("NUMBER %s %.1f\n", string(result), floatVal)
 						} else {
 							// It's a float, print with decimals
-							fmt.Printf("NUMBER %s %f\n", string(result), floatVal)
+							fmt.Printf("NUMBER %s %g\n", string(result), floatVal)
 						}
 					}
 					
