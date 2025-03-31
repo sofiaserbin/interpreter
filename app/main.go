@@ -68,6 +68,10 @@ func main() {
 		for indx < len(fileContents) {
     		ch := rune(fileContents[indx])
 			switch rune(ch) {
+				
+			case ' ', '\t':  
+				// Ignore spaces and tabs completely
+
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ) null")
 
