@@ -7,6 +7,7 @@ import (
 
 func main() {
 	var has_error = false
+	var line = 1
 
 	const (
 		LEFT_PAREN rune = '('
@@ -62,6 +63,7 @@ func main() {
 	if len(fileContents) < 0 {
 		panic("File empty")
 	} else {
+		line++
 		indx := 0
 		for indx < len(fileContents) {
     		ch := rune(fileContents[indx])
@@ -95,6 +97,9 @@ func main() {
 
 			case STAR:
 				fmt.Println("STAR * null")
+			
+			case '\n':
+				line++
 			
 			case EQUAL:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
@@ -141,7 +146,7 @@ func main() {
 
 			case NUMBER, DOLLAR, ATSIGN, CARET, PERCENT:
 				
-				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c\n", ch)
+				fmt.Fprintf(os.Stderr, "[line %d] Error: Unexpected character: %c\n", line, ch)
 				has_error = true
 			}
 			indx++ 
