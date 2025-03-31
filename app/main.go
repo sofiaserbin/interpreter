@@ -196,9 +196,11 @@ func main() {
 				if (unicode.IsDigit(ch)){
 					var result []rune
 					for indx < len(fileContents) && fileContents[indx] != ' ' {
-						if (rune(fileContents[indx]) == '.' || unicode.IsDigit(rune(fileContents[index])))
-						result = append(result, rune(fileContents[indx]))
-						indx++
+						if (rune(fileContents[indx]) == '.' || unicode.IsDigit(rune(fileContents[index]))){
+							result = append(result, rune(fileContents[indx]))
+							indx++
+						}
+						
 					}
 					fmt.Printf("NUMBER %f %s", float(result), string(result))
 				} else{
