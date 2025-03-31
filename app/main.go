@@ -7,9 +7,12 @@ import (
 
 func main() {
 
+
 	const (
 		LEFT_PAREN rune = '('
 		RIGHT_PAREN rune = ')'
+		LEFT_BRACE rune = '{'
+		RIGHT_BRACE rune = '}'
 	)
 
 	// You can use print statements as follows for debugging, they'll be visible when running tests.
@@ -46,6 +49,12 @@ func main() {
 
 			case LEFT_PAREN:
 				fmt.Println("LEFT_PAREN ( null")
+
+			case RIGHT_BRACE:
+				fmt.Println("LEFT_BRACE { null")
+			
+			case LEFT_BRACE:
+				fmt.Println("RIGHT_BRACE } null")
 			}
 		}
 		fmt.Println("EOF  null")
