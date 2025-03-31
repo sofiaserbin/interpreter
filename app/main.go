@@ -21,6 +21,8 @@ func main() {
 		STAR rune = '*'
 		EQUAL rune = '='
 		BANG rune = '!'
+		LESS rune = '<'
+		GREATER rune = '>'
 	)
 
 	const (	
@@ -107,6 +109,22 @@ func main() {
 					indx++
 				} else{
 					fmt.Println("BANG ! null")
+				}
+			
+			case LESS:
+				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
+					fmt.Println("LESS_EQUAL <= null")
+					indx++
+				} else{
+					fmt.Println("LESS < null")
+				}
+			
+			case GREATER:
+				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
+					fmt.Println("GREATER_EQUAL >= null")
+					indx++
+				} else{
+					fmt.Println("GREATER > null")
 				}
 				
 
