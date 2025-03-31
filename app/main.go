@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"runtime"
 )
 
 func main() {
@@ -19,6 +20,11 @@ func main() {
 		PLUS rune = '+'
 		SEMICOLON rune = ';'
 		STAR rune = '*'
+	)
+
+	const (	
+		NUMBER rune = '#'
+		DOLLAR rune = '$'
 	)
 
 	// You can use print statements as follows for debugging, they'll be visible when running tests.
@@ -79,6 +85,16 @@ func main() {
 
 			case STAR:
 				fmt.Println("STAR * null")
+
+			case NUMBER:
+				_, file, line, _ := runtime.Caller(1)
+				fmt.Println(os.Stderr, "[line %d] Error: Unexpected character: #", line)
+				os.Exit(65)
+			
+			case DOLLAR:
+				_, file, line, _ := runtime.Caller(1)
+				fmt.Println(os.Stderr, "[line %d] Error: Unexpected character: $", line)
+				os.Exit(65)
 			}
 		}
 		fmt.Println("EOF  null")
