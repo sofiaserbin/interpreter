@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-
+	var has_error = false
 
 	const (
 		LEFT_PAREN rune = '('
@@ -91,10 +91,12 @@ func main() {
 			case NUMBER, DOLLAR, ATSIGN, CARET:
 				
 				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c", ch)
-				fmt.Println("EOF  null")
-				os.Exit(65)
+				has_error = true
 			}
 			fmt.Println("EOF  null")
+			if (has_error){
+				os.Exit(65)
+			}
 		}
 	}
 }
