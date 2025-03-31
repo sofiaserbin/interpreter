@@ -86,14 +86,9 @@ func main() {
 			case STAR:
 				fmt.Println("STAR * null")
 
-			case NUMBER:
+			case NUMBER, DOLLAR:
 				_, file, line, _ := runtime.Caller(1)
-				fmt.Println(os.Stderr, "[line %d] Error: Unexpected character: #", line)
-				os.Exit(65)
-			
-			case DOLLAR:
-				_, file, line, _ := runtime.Caller(1)
-				fmt.Println(os.Stderr, "[line %d] Error: Unexpected character: $", line)
+				fmt.Fprintf(os.Stderr, "[line %d] Error: Unexpected character: %c\n", line, ch)
 				os.Exit(65)
 			}
 		}
