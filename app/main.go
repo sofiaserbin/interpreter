@@ -23,6 +23,7 @@ func main() {
 		BANG rune = '!'
 		LESS rune = '<'
 		GREATER rune = '>'
+		SLASH rune = '/'
 	)
 
 	const (	
@@ -127,6 +128,13 @@ func main() {
 					fmt.Println("GREATER > null")
 				}
 				
+			case SLASH:
+				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '/'){
+					indx++
+				} else{
+					fmt.Println("SLASH / null")
+				}
+
 
 			case NUMBER, DOLLAR, ATSIGN, CARET, PERCENT:
 				
