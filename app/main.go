@@ -113,7 +113,7 @@ func main() {
 				}
 
 				if indx >= len(fileContents){
-					fmt.FPrintf(os.Stderr, "[line %d] Error: Unterminated string.\n", startLine)
+					fmt.Fprintf(os.Stderr, "[line %d]  STRING \"unterminated\" unterminated.\n")
 					has_error = true
 				} else 
 				if len(string(result)) > 0 {
