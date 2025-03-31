@@ -15,13 +15,11 @@ func main() {
 	reserved_words := []string{"and", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"}
 
 	func contains(words []string, search string) bool {
-		for _, word in range words{
+		for _, word := range words{
 			if word == search{
 				return true
-			} else{
-				return false
-			}
-		}
+			} 
+		} return false
 
 	}
 
