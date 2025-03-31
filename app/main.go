@@ -5,11 +5,25 @@ import (
 	"os"
 	"unicode"
 	"strconv"
+	"strings"
 )
 
 func main() {
 	var has_error = false
 	var line = 1
+
+	reserved_words := []string{"and", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"}
+
+	func contains(words []string, search string) bool {
+		for _, word in range words{
+			if word == search{
+				return true
+			} else{
+				return false
+			}
+		}
+
+	}
 
 	const (
 		LEFT_PAREN rune = '('
@@ -228,7 +242,12 @@ func main() {
 							break
 						}	
 					} 
-					fmt.Printf("IDENTIFIER %s null\n", string(result))
+					if (contains(reserved_words, string(result))){
+						fmt.Printf("%s %s null\n", string(result).ToUpper(), string(result))
+					} else{
+						fmt.Printf("IDENTIFIER %s null\n", string(result))
+					}
+					
 				} else{
 					indx++
 				}
