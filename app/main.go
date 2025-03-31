@@ -89,7 +89,7 @@ func main() {
 
 			case NUMBER, DOLLAR, ATSIGN, CARET:
 				
-				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %ch", ch)
+				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c", ch)
 				os.Exit(65)
 			}
 		}
