@@ -202,8 +202,7 @@ func main() {
 							indx++
 						} else {
 							break
-						}
-						
+						}	
 					}
 					floatVal, err := strconv.ParseFloat(string(result), 64)
 					if err!=nil {
@@ -219,6 +218,16 @@ func main() {
 						}
 					}
 					
+				} else if (unicode.IsLettter(ch) || ch == '_'){
+					var result []rune
+					for indx < len(fileContents) && fileContents[indx] != ' ' {
+						if (rune(fileContents[indx]) == '_' || unicode.IsDigit(rune(fileContents[indx])) || unicode.isLettter(rune(fileContents[indx]))){
+							result = append(result, rune(fileContents[indx]))
+							indx++
+						} else {
+							break
+						}	
+					} mt.Printf("IDENTIFIER %s null\n", string(result))
 				} else{
 					indx++
 				}
