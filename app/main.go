@@ -25,6 +25,8 @@ func main() {
 	const (	
 		NUMBER rune = '#'
 		DOLLAR rune = '$'
+		ATSIGN rune = '@'
+		CARET rune = '^'
 	)
 
 	// You can use print statements as follows for debugging, they'll be visible when running tests.
@@ -86,7 +88,7 @@ func main() {
 			case STAR:
 				fmt.Println("STAR * null")
 
-			case NUMBER, DOLLAR:
+			case NUMBER, DOLLAR, ATSIGN, CARET:
 				_, _, line, _ := runtime.Caller(1)
 				fmt.Fprintf(os.Stderr, "[line %d] Error: Unexpected character: %c\n", line, ch)
 				os.Exit(65)
