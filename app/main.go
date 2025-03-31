@@ -20,6 +20,7 @@ func main() {
 		SEMICOLON rune = ';'
 		STAR rune = '*'
 		EQUAL rune = '='
+		BANG rune = '!'
 	)
 
 	const (	
@@ -98,6 +99,14 @@ func main() {
 					indx++
 				} else{
 					fmt.Println("EQUAL = null")
+				}
+			
+			case BANG:
+				if (indx + 2 < len(fileContents) && fileContents[indx+1] == '='){
+					fmt.Println("BANG_EQUAL != null")
+					indx++
+				} else{
+					fmt.Println("BANG ! null")
 				}
 				
 
