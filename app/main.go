@@ -95,7 +95,7 @@ func main() {
 					fmt.Println("EQUAL_EQUAL == null")
 					indx++
 				} else{
-					fmt.Println("EQUAL == null")
+					fmt.Println("EQUAL = null")
 				}
 				
 
