@@ -36,8 +36,8 @@ func main() {
 		os.Exit(1)
 	}
 	
-	if len(fileContents) > 0 {
-		panic("Scanner not implemented")
+	if len(fileContents) < 0 {
+		panic("File empty")
 	} else {
 		for _, ch := range fileContents{
 			switch rune(ch) {
