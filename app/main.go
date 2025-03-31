@@ -227,7 +227,8 @@ func main() {
 						} else {
 							break
 						}	
-					} fmt.Printf("IDENTIFIER %s null\n", string(result))
+					} 
+					fmt.Printf("IDENTIFIER %s null\n", string(result))
 				} else{
 					indx++
 				}
