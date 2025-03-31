@@ -176,7 +176,7 @@ func main() {
 			case SLASH:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '/'){
 					indx += 2
-					for indx + 1 < len(fileContents) && fileContents[indx+1] != '\n'{
+					for indx < len(fileContents) && fileContents[indx] != '\n'{
 						indx++
 					}
 					
