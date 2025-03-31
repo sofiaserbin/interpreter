@@ -54,7 +54,7 @@ func main() {
 				fmt.Println("RIGHT_BRACE } null")
 			
 			case LEFT_BRACE:
-				fmt.Println("LEFT_BRACE } null")
+				fmt.Println("LEFT_BRACE { null")
 			}
 		}
 		fmt.Println("EOF  null")
