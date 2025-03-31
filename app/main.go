@@ -112,11 +112,12 @@ func main() {
 					indx++
 				}
 
-				if line >= len(fileContents){
-					fmt.Printf(os.Stderr, "[line %d] Error: Unterminated string.\n", startLine)
+				if indx >= len(fileContents){
+					fmt.FPrintf(os.Stderr, "[line %d] Error: Unterminated string.\n", startLine)
 					has_error = true
-				}
+				} else 
 				if len(string(result)) > 0 {
+					indx++
 					fmt.Printf("STRING \"%s\" %s\n", string(result), string(result))
 				}
 				
