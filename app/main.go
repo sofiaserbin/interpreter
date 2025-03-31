@@ -187,6 +187,9 @@ func main() {
 				fmt.Fprintf(os.Stderr, "[line %d] Error: Unexpected character: %c\n", line, ch)
 				has_error = true
 				indx++
+			default:
+				indx++
+			
 			}
 			}
 		} 
