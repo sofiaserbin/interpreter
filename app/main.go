@@ -119,6 +119,8 @@ func main() {
 				if len(string(result)) > 0 {
 					indx++
 					fmt.Printf("STRING \"%s\" %s\n", string(result), string(result))
+				} else{
+					has_error= true
 				}
 				
 			
