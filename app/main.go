@@ -108,7 +108,7 @@ func main() {
 			case QUOTE:
 				var result []rune
 				for indx + 1 < len(fileContents) && fileContents[indx+1] != '"'{
-					result.append(result, fileContents[indx+1])
+					result = append(result, rune(fileContents[indx+1]))
 					indx++
 				}
 				fmt.Println("STRING \"%s\" null")
