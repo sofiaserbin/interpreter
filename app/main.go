@@ -203,7 +203,14 @@ func main() {
 						}
 						
 					}
-					fmt.Printf("NUMBER %f %s", strconv.ParseFloat(string(result), 64), string(result))
+					floatVal, err := strconv.ParseFloat(result, 64)
+					if err!=nil {
+						fmt.Fprintf(os.Stderr, "[line %d] Error: Failed to parse number", line)
+						has_error = true
+					} else{
+						fmt.Printf("NUMBER %f %s", floatVal, string(result))
+					}
+					
 				} else{
 					indx++
 				}
