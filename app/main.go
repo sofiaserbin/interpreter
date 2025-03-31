@@ -196,10 +196,9 @@ func main() {
 			default:
 				if (unicode.IsDigit(ch)){
 					var result []rune
-					for indx < len(fileContents) && fileContents[indx] != ' ' {
-						if (rune(fileContents[indx]) == '.' || unicode.IsDigit(rune(fileContents[indx]))){
-							result = append(result, rune(fileContents[indx]))
-							indx++
+					for indx < len(fileContents) && fileContents[indx] != ' ' && (rune(fileContents[indx]) == '.' || unicode.IsDigit(rune(fileContents[indx]))){
+						result = append(result, rune(fileContents[indx]))
+						indx++
 						}
 						
 					}
