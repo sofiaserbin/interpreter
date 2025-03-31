@@ -48,6 +48,6 @@ func main() {
 				fmt.Println("LEFT_PAREN ( null")
 			}
 		}
-		fmt.Println("EOF null")
+		fmt.Println("EOF  null")
 	}
 }
