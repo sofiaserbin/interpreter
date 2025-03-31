@@ -25,6 +25,7 @@ func main() {
 		LESS rune = '<'
 		GREATER rune = '>'
 		SLASH rune = '/'
+		QUOTE rune = '"'
 	)
 
 	const (	
@@ -103,6 +104,14 @@ func main() {
 			
 			case '\n':
 				line++
+			
+			case QUOTE:
+				var result []rune
+				for indx + 1 < len(fileContents) && fileContents[indx+1] != '"'{
+					result.append(result, fileContents[indx+1])
+					indx++
+				}
+				fmt.Println("STRING \"%s\" null")
 			
 			case EQUAL:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
