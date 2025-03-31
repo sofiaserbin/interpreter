@@ -111,7 +111,7 @@ func main() {
 					result = append(result, rune(fileContents[indx+1]))
 					indx++
 				}
-				fmt.Println("STRING \"%s\" %s", string(result), string(result))
+				fmt.Printf("STRING \"%s\" %s\n", string(result), string(result))
 			
 			case EQUAL:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
