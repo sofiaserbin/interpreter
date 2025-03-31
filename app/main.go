@@ -94,7 +94,8 @@ func main() {
 				has_error = true
 			}
 			}
-		} fmt.Println("EOF  null")
+		} 
+		fmt.Println("EOF  null")
 		if (has_error){
 			os.Exit(65)
 	}
