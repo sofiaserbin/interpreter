@@ -7,10 +7,10 @@ import (
 
 func main() {
 
-	const {
+	const (
 		LEFT_PAREN rune = '('
 		RIGHT_PAREN rune = ')'
-	}
+	)
 
 	// You can use print statements as follows for debugging, they'll be visible when running tests.
 	fmt.Fprintln(os.Stderr, "Logs from your program will appear here!")
@@ -39,7 +39,7 @@ func main() {
 	if len(fileContents) > 0 {
 		panic("Scanner not implemented")
 	} else {
-		for ch in fileContents{
+		for indx, ch in fileContents{
 			switch ch {
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ( null")
