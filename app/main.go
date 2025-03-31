@@ -8,20 +8,22 @@ import (
 	"strings"
 )
 
+func contains(words []string, search string) bool {
+	for _, word := range words{
+		if word == search{
+			return true
+		} 
+	} return false
+
+}
+
 func main() {
 	var has_error = false
 	var line = 1
 
 	reserved_words := []string{"and", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"}
 
-	func contains(words []string, search string) bool {
-		for _, word := range words{
-			if word == search{
-				return true
-			} 
-		} return false
-
-	}
+	
 
 	const (
 		LEFT_PAREN rune = '('
