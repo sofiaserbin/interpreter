@@ -196,16 +196,8 @@ func main() {
 			default:
 				if (unicode.IsDigit(ch)){
 					var result []rune
-					zero := false
 					for indx < len(fileContents) && fileContents[indx] != ' ' {
 						if (rune(fileContents[indx]) == '.' || unicode.IsDigit(rune(fileContents[indx]))){
-							if (rune(fileContents[indx]) == '.'){
-								zero = true
-							}
-							if (zero == true && rune(fileContents[indx]) == '0' && indx+1<len(fileContents) && fileContents[indx+1] == '0'){
-								result = append(result, rune(fileContents[indx]))
-								break
-							}
 							result = append(result, rune(fileContents[indx]))
 							indx++
 						}
@@ -216,7 +208,13 @@ func main() {
 						fmt.Fprintf(os.Stderr, "[line %d] Error: Failed to parse number", line)
 						has_error = true
 					} else{
-						fmt.Printf("NUMBER %s %f\n", string(result), floatVal)
+						if floatVal == float64(int(floatVal)) {
+							// It's an integer, print without decimals
+							fmt.Printf("NUMBER %s %.0f\n", string(result), floatVal)
+						} else {
+							// It's a float, print with decimals
+							fmt.Printf("NUMBER %s %f\n", string(result), floatVal)
+						}
 					}
 					
 				} else{
