@@ -111,6 +111,11 @@ func main() {
 					result = append(result, rune(fileContents[indx+1]))
 					indx++
 				}
+
+				if line >= len(fileContents){
+					fmt.Printf(os.Stderr, "[line %d] Error: Unterminated string.\n", startLine)
+					has_error = true
+				}
 				if len(string(result)) > 0 {
 					fmt.Printf("STRING \"%s\" %s\n", string(result), string(result))
 				}
