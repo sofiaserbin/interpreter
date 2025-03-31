@@ -42,7 +42,7 @@ func main() {
 		for _, ch := range fileContents{
 			switch rune(ch) {
 			case RIGHT_PAREN:
-				fmt.Println("RIGHT_PAREN ( null")
+				fmt.Println("RIGHT_PAREN ) null")
 
 			case LEFT_PAREN:
 				fmt.Println("LEFT_PAREN ( null")
