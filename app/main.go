@@ -102,13 +102,16 @@ func main() {
 			case STAR:
 				fmt.Println("STAR * null")
 			
-			case '\n':
-				line++
 			
 			case QUOTE:
 				var result []rune
-				for indx + 1 < len(fileContents) && fileContents[indx+1] != '"'{
-					result = append(result, rune(fileContents[indx+1]))
+				indx++
+				for indx < len(fileContents) && fileContents[indx] != '"' {
+					// Track new lines inside the string
+					if fileContents[indx] == '\n' {
+						line++
+					}
+					result = append(result, rune(fileContents[indx]))
 					indx++
 				}
 
