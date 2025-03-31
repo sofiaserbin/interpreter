@@ -63,12 +63,11 @@ func main() {
 	if len(fileContents) < 0 {
 		panic("File empty")
 	} else {
-		line++
 		indx := 0
 		for indx < len(fileContents) {
     		ch := rune(fileContents[indx])
 			switch rune(ch) {
-				
+
 			case ' ', '\t':  
 				// Ignore spaces and tabs completely
 
