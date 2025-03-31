@@ -200,9 +200,7 @@ func main() {
 						result = append(result, rune(fileContents[indx]))
 						indx++
 						}
-						
-					}
-					floatVal, err := strconv.ParseFloat(string(result), 64)
+						floatVal, err := strconv.ParseFloat(string(result), 64)
 					if err!=nil {
 						fmt.Fprintf(os.Stderr, "[line %d] Error: Failed to parse number", line)
 						has_error = true
@@ -215,6 +213,8 @@ func main() {
 							fmt.Printf("NUMBER %s %g\n", string(result), floatVal)
 						}
 					}
+					}
+					
 					
 				} else{
 					indx++
@@ -228,4 +228,4 @@ func main() {
 		if (has_error){
 			os.Exit(65)
 	}
-}
+
