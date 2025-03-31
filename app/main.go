@@ -9,26 +9,26 @@ func main() {
 	var has_error = false
 
 	const (
-		LEFT_PAREN rune = '('
-		RIGHT_PAREN rune = ')'
-		LEFT_BRACE rune = '{'
-		RIGHT_BRACE rune = '}'
-		COMMA rune = ','
-		DOT rune = '.'
-		MINUS rune = '-'
-		PLUS rune = '+'
-		SEMICOLON rune = ';'
-		STAR rune = '*'
-		EQUAL_EQUAL rune = "=="
-		EQUAL rune = '='
+		LEFT_PAREN string = '('
+		RIGHT_PAREN string = ')'
+		LEFT_BRACE string = '{'
+		RIGHT_BRACE string = '}'
+		COMMA string = ','
+		DOT string = '.'
+		MINUS string = '-'
+		PLUS string = '+'
+		SEMICOLON string = ';'
+		STAR string = '*'
+		EQUAL_EQUAL string = "=="
+		EQUAL string = '='
 	)
 
 	const (	
-		NUMBER rune = '#'
-		DOLLAR rune = '$'
-		ATSIGN rune = '@'
-		CARET rune = '^'
-		PERCENT rune = '%'
+		NUMBER string = '#'
+		DOLLAR string = '$'
+		ATSIGN string = '@'
+		CARET string = '^'
+		PERCENT string = '%'
 	)
 
 
@@ -60,7 +60,7 @@ func main() {
 		panic("File empty")
 	} else {
 		for _, ch := range fileContents{
-			switch rune(ch) {
+			switch ch {
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ) null")
 
