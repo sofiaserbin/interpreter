@@ -13,7 +13,8 @@ func contains(words []string, search string) bool {
 		if word == search{
 			return true
 		} 
-	} return false
+	} 
+	return false
 
 }
 
