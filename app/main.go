@@ -58,7 +58,9 @@ func main() {
 	if len(fileContents) < 0 {
 		panic("File empty")
 	} else {
-		for indx, ch := range fileContents{
+		indx := 0
+		for indx < len(fileContents) {
+    		ch := rune(fileContents[indx])
 			switch rune(ch) {
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ) null")
@@ -96,7 +98,6 @@ func main() {
 					indx++
 				} else{
 					fmt.Println("EQUAL = null")
-					indx++
 				}
 				
 
@@ -105,6 +106,7 @@ func main() {
 				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c\n", ch)
 				has_error = true
 			}
+			indx++ 
 			}
 		} 
 		fmt.Println("EOF  null")
