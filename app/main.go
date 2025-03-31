@@ -28,7 +28,6 @@ func main() {
 		CARET rune = '^'
 	)
 
-	defer fmt.Println("EOF  null")
 
 	// You can use print statements as follows for debugging, they'll be visible when running tests.
 	fmt.Fprintln(os.Stderr, "Logs from your program will appear here!")
@@ -92,8 +91,10 @@ func main() {
 			case NUMBER, DOLLAR, ATSIGN, CARET:
 				
 				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c", ch)
+				fmt.Println("EOF  null")
 				os.Exit(65)
 			}
+			fmt.Println("EOF  null")
 		}
 	}
 }
