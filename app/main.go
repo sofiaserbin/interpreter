@@ -208,7 +208,7 @@ func main() {
 						fmt.Fprintf(os.Stderr, "[line %d] Error: Failed to parse number", line)
 						has_error = true
 					} else{
-						fmt.Printf("NUMBER %s %.1f\n", string(result), floatVal)
+						fmt.Printf("NUMBER %s %f\n", string(result), floatVal)
 					}
 					
 				} else{
