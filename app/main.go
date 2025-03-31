@@ -19,6 +19,8 @@ func main() {
 		PLUS rune = '+'
 		SEMICOLON rune = ';'
 		STAR rune = '*'
+		EQUAL_EQUAL rune = "=="
+		EQUAL rune = '='
 	)
 
 	const (	
@@ -88,6 +90,12 @@ func main() {
 
 			case STAR:
 				fmt.Println("STAR * null")
+			
+			case EQUAL:
+				fmt.Println("EQUAL == null")
+
+			case EQUAL_EQUAL:
+				fmt.Println("EQUAL_EQUAL == null")
 
 			case NUMBER, DOLLAR, ATSIGN, CARET, PERCENT:
 				
