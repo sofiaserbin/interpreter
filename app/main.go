@@ -72,6 +72,10 @@ func main() {
 			case ' ', '\t':  
 				indx++
 
+			case '\n':  
+				line++ // Newline increments line count.
+				indx++
+
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ) null")
 				indx++
