@@ -93,10 +93,9 @@ func main() {
 				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c", ch)
 				has_error = true
 			}
-			fmt.Println("EOF  null")
-			if (has_error){
-				os.Exit(65)
 			}
-		}
+		} fmt.Println("EOF  null")
+		if (has_error){
+			os.Exit(65)
 	}
 }
