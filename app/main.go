@@ -94,6 +94,6 @@ func main() {
 				fmt.Fprintf(os.Stderr, "[line 1] Error: Unexpected character: %c", ch)
 				os.Exit(65)
 			}
-		
+		}
 	}
 }
