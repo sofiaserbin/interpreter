@@ -107,7 +107,6 @@ func main() {
 				var result []rune
 				indx++
 				for indx < len(fileContents) && fileContents[indx] != '"' {
-					// Track new lines inside the string
 					if fileContents[indx] == '\n' {
 						line++
 					}
@@ -115,14 +114,13 @@ func main() {
 					indx++
 				}
 
-				if indx >= len(fileContents) || len(string(result))<=0{
+				if indx >= len(fileContents) {
 					fmt.Fprintf(os.Stderr, "[line %d] Error: Unterminated string.\n", line)
 					has_error = true
-				} else 
-				if len(string(result)) > 0 {
+				} else {
 					indx++
 					fmt.Printf("STRING \"%s\" %s\n", string(result), string(result))
-				} 
+				}
 				
 			
 			case EQUAL:
