@@ -9,26 +9,25 @@ func main() {
 	var has_error = false
 
 	const (
-		LEFT_PAREN string = '('
-		RIGHT_PAREN string = ')'
-		LEFT_BRACE string = '{'
-		RIGHT_BRACE string = '}'
-		COMMA string = ','
-		DOT string = '.'
-		MINUS string = '-'
-		PLUS string = '+'
-		SEMICOLON string = ';'
-		STAR string = '*'
-		EQUAL_EQUAL string = "=="
-		EQUAL string = '='
+		LEFT_PAREN rune = '('
+		RIGHT_PAREN rune = ')'
+		LEFT_BRACE rune = '{'
+		RIGHT_BRACE rune = '}'
+		COMMA rune = ','
+		DOT rune = '.'
+		MINUS rune = '-'
+		PLUS rune = '+'
+		SEMICOLON rune = ';'
+		STAR rune = '*'
+		EQUAL rune = '='
 	)
 
 	const (	
-		NUMBER string = '#'
-		DOLLAR string = '$'
-		ATSIGN string = '@'
-		CARET string = '^'
-		PERCENT string = '%'
+		NUMBER rune = '#'
+		DOLLAR rune = '$'
+		ATSIGN rune = '@'
+		CARET rune = '^'
+		PERCENT rune = '%'
 	)
 
 
@@ -59,8 +58,8 @@ func main() {
 	if len(fileContents) < 0 {
 		panic("File empty")
 	} else {
-		for _, ch := range fileContents{
-			switch ch {
+		for indx, ch := range fileContents{
+			switch rune(ch) {
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ) null")
 
@@ -92,10 +91,13 @@ func main() {
 				fmt.Println("STAR * null")
 			
 			case EQUAL:
-				fmt.Println("EQUAL == null")
-
-			case EQUAL_EQUAL:
-				fmt.Println("EQUAL_EQUAL == null")
+				if (i + 1 < len(fileContents) && fileContents[i+1] == '='){
+					fmt.Println("EQUAL_EQUAL == null")
+					i++
+				} else{
+					fmt.Println("EQUAL == null")
+				}
+				
 
 			case NUMBER, DOLLAR, ATSIGN, CARET, PERCENT:
 				
