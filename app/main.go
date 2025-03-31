@@ -102,7 +102,7 @@ func main() {
 				}
 			
 			case BANG:
-				if (indx + 2 < len(fileContents) && fileContents[indx+1] == '='){
+				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("BANG_EQUAL != null")
 					indx++
 				} else{
