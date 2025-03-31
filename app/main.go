@@ -6,6 +6,12 @@ import (
 )
 
 func main() {
+
+	const {
+		LEFT_PAREN rune = '('
+		RIGHT_PAREN rune = ')'
+	}
+
 	// You can use print statements as follows for debugging, they'll be visible when running tests.
 	fmt.Fprintln(os.Stderr, "Logs from your program will appear here!")
 
@@ -33,6 +39,15 @@ func main() {
 	if len(fileContents) > 0 {
 		panic("Scanner not implemented")
 	} else {
-		fmt.Println("EOF  null") // Placeholder, remove this line when implementing the scanner
+		for ch in fileContents{
+			switch ch {
+			case RIGHT_PAREN:
+				fmt.Println("RIGHT_PAREN ( null")
+
+			case LEFT_PAREN:
+				fmt.Println("LEFT_PAREN ( null")
+			}
+		}
+		fmt.Println("EOF null")
 	}
 }
