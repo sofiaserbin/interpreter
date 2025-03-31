@@ -244,7 +244,7 @@ func main() {
 						}	
 					} 
 					if (contains(reserved_words, string(result))){
-						fmt.Printf("%s %s null\n", string(result).ToUpper(), string(result))
+						fmt.Printf("%s %s null\n", strings.ToUpper(string(result)), string(result))
 					} else{
 						fmt.Printf("IDENTIFIER %s null\n", string(result))
 					}
