@@ -70,37 +70,47 @@ func main() {
 			switch rune(ch) {
 
 			case ' ', '\t':  
-				// Ignore spaces and tabs completely
+				indx++
 
 			case RIGHT_PAREN:
 				fmt.Println("RIGHT_PAREN ) null")
+				indx++
 
 			case LEFT_PAREN:
 				fmt.Println("LEFT_PAREN ( null")
+				indx++
 
 			case RIGHT_BRACE:
 				fmt.Println("RIGHT_BRACE } null")
+				indx++
 			
 			case LEFT_BRACE:
 				fmt.Println("LEFT_BRACE { null")
+				indx++
 			
 			case COMMA:
 				fmt.Println("COMMA , null")
+				indx++
 
 			case DOT:
 				fmt.Println("DOT . null")
+				indx++
 
 			case MINUS:
 				fmt.Println("MINUS - null")
+				indx++
 
 			case PLUS:
 				fmt.Println("PLUS + null")
+				indx++
 			
 			case SEMICOLON:
 				fmt.Println("SEMICOLON ; null")
+				indx++
 
 			case STAR:
 				fmt.Println("STAR * null")
+				indx++
 			
 			
 			case QUOTE:
@@ -126,43 +136,49 @@ func main() {
 			case EQUAL:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("EQUAL_EQUAL == null")
-					indx++
+					indx =+ 2
 				} else{
 					fmt.Println("EQUAL = null")
+					indx++
 				}
 			
 			case BANG:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("BANG_EQUAL != null")
-					indx++
+					indx =+ 2
 				} else{
 					fmt.Println("BANG ! null")
+					indx++
 				}
 			
 			case LESS:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("LESS_EQUAL <= null")
-					indx++
+					indx =+ 2
 				} else{
 					fmt.Println("LESS < null")
+					indx++
 				}
 			
 			case GREATER:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '='){
 					fmt.Println("GREATER_EQUAL >= null")
-					indx++
+					indx =+ 2
 				} else{
 					fmt.Println("GREATER > null")
+					indx++
 				}
 				
 			case SLASH:
 				if (indx + 1 < len(fileContents) && fileContents[indx+1] == '/'){
+					indx =+ 2
 					for indx + 1 < len(fileContents) && fileContents[indx+1] != '\n'{
 						indx++
 					}
 					
 				} else{
 					fmt.Println("SLASH / null")
+					indx++
 				}
 
 
@@ -170,8 +186,8 @@ func main() {
 				
 				fmt.Fprintf(os.Stderr, "[line %d] Error: Unexpected character: %c\n", line, ch)
 				has_error = true
+				indx++
 			}
-			indx++ 
 			}
 		} 
 		fmt.Println("EOF  null")
