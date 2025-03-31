@@ -200,6 +200,8 @@ func main() {
 						if (rune(fileContents[indx]) == '.' || unicode.IsDigit(rune(fileContents[indx]))){
 							result = append(result, rune(fileContents[indx]))
 							indx++
+						} else {
+							break
 						}
 						
 					}
